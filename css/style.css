@@ -146,6 +146,7 @@ img {
 .bar {
   padding-top: 3rem;
 }
+/*ABOUT US*/
 
 /*madia Query*/
 @media (min-width:768px) {
@@ -169,4 +170,24 @@ img {
   .button{
     display: inline-block;
   }
+  /*ABOUT US*/
+  .about-us{
+                  /*Grid Style*/
+             
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+                /*flexbox Style*/
+  /* .about-us{
+    display: flex;
+    justify-content: space-between;
+  }
+  .about-us__img,
+  .about-us__text{
+    flex-basis: 50%;
+    or
+    flex: 0 0 calc(50% -1rem);
+  } */
 }
