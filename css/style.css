@@ -22,6 +22,9 @@ body{
 }
 /*Global*/
 .container{
+  /*Spaces around the content try with 100% mobile*/
+  /* width: 90%;
+  max-width: 120rem; */
   width: min(90%, 120rem);
   margin: 0 auto;
 }
@@ -135,6 +138,14 @@ img {
 .widget-course__info{
   font-size: 2rem;
 }
+.footer{
+  background-color: var(--black);
+  padding-bottom: 3rem;
+  margin-top: 4rem;
+}
+.bar {
+  padding-top: 3rem;
+}
 
 /*madia Query*/
 @media (min-width:768px) {
@@ -159,8 +170,3 @@ img {
     display: inline-block;
   }
 }
-/*
-.barra {
-    padding-top: 4rem;
-}
-*/
