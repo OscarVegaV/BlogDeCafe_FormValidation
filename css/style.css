@@ -173,6 +173,33 @@ img {
   background-repeat: no-repeat;
 }
 
+/* FORM*/
+.form{
+  background-color: var(--white);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 5rem;
+}
+.field{
+  display: flex;
+  margin-bottom: 2rem;
+}
+.field__label{
+  /*It don't grown with first 0 | it doesn't grown with second 0 | W and H 9rem*/
+  flex: 0 0 9rem;
+  text-align: right;
+  padding-right: 2rem;
+}
+.field__input{
+  /*It grown with the input 1 px for 0px of input */
+  flex: 1; 
+  border: 1px solid (var(--lightGrey));
+}
+.field__input--textarea{
+  height: 20rem;
+}
+
+
 /*madia Query*/
 @media (min-width:768px) {
   .bar{
@@ -194,6 +221,9 @@ img {
   }  
   .button{
     display: inline-block;
+  }
+  .button:hover{
+    cursor:pointer;
   }
   /*ABOUT US*/
   .about-us{
@@ -222,4 +252,5 @@ img {
     grid-template-columns: 1fr 2fr;
     column-gap: 2rem;
   }
+
 }
