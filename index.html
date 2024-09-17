@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlogDeCafé</title>
-  
+  <!-- Prefetch (to improve performance for the next page) -->
+  <link rel="Prefetch" href="about_us.html" as="document">
+  <!-- End Prefetch -->
+
   <!-- PRELOAD *(to improve performance)-->
   <link rel="preload" href="css/normalize.css" as="style">
   <link rel="stylesheet" href="css/normalize.css">
@@ -15,11 +18,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="preload" href="css/style.css" as="style">
-  <link rel="stylesheet" href="css/style.css">
-  
-  <link rel="preload" href="img/blog1.jpg" as="image">
-<!-- END  PRELOAD -->
+  <link rel="stylesheet" href="css/style.css">  
+  <!-- <link rel="preload" href="img/blog1.jpg" as="image"> -->
 
+<!-- END  PRELOAD -->
 </head>
 <body>
   <header class="header">
@@ -56,7 +58,11 @@
       <!-- article 1 -->
       <article class="input">
         <div class="input__img">
-          <img src="img/blog1.jpg" alt="imagen blog" loading="lazy">
+          <!-- webp *(to improve performance)-->
+           <picture>
+            <source srcset="img/blog1.webp" type="image/webp" loading="lazy">
+            <img src="img/blog1.jpg" alt="imagen blog" loading="lazy">
+           </picture>
         </div>
         <div class="input__content">
           <h4 class="no-margin">
@@ -70,7 +76,12 @@
       <!-- article 2 -->
       <article class="input">
         <div class="input__img">
-          <img src="img/blog2.jpg" alt="imagen blog" loading="lazy">
+          <!-- webp *(to improve performance)-->
+          <picture>
+            <source srcset="img/blog2.webp" type="image/webp" loading="lazy">
+            <img src="img/blog2.jpg" alt="imagen blog" loading="lazy">
+           </picture>
+
         </div>
         <div class="input__content">
           <h4 class="no-margin">
@@ -84,7 +95,12 @@
       <!-- article 3 -->
       <article class="input">
         <div class="input__img">
-          <img src="img/blog3.jpg" alt="imagen blog" loading="lazy">
+          <!-- webp *(to improve performance)-->
+          <picture>
+            <source srcset="img/blog3.webp" type="image/webp loading="lazy"">
+            <img src="img/blog3.jpg" alt="imagen blog" loading="lazy">
+           </picture>
+
         </div>
         <div class="input__content">
           <h4 class="no-margin">
