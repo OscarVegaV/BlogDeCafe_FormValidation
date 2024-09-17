@@ -115,7 +115,7 @@ img {
 .secundary--button{
   background-color: var(--primary);
 }
-.course{
+.courses{
   list-style: none;
 }
 .widget-couse{
@@ -146,7 +146,25 @@ img {
 .bar {
   padding-top: 3rem;
 }
-/*ABOUT US*/
+/*Course*/
+.course{
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--lightGrey);
+}
+.course:last-of-type{
+  border: none;
+}
+.course__lavel{
+  font-family: var(--fontHeading);
+  font-weight: 700;
+}
+.course__info {
+  font-weight: 400;
+}
+.course__label,
+.course__info {
+  font-size: 2rem;
+}
 
 /*madia Query*/
 @media (min-width:768px) {
@@ -190,4 +208,11 @@ img {
     or
     flex: 0 0 calc(50% -1rem);
   } */
+
+  /* COURSE*/
+  .course{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+  }
 }
