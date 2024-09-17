@@ -146,7 +146,7 @@ img {
 .bar {
   padding-top: 3rem;
 }
-/*Course*/
+/*   COURSE   */
 .course{
   padding: 3rem 0;
   border-bottom: 1px solid var(--lightGrey);
@@ -164,6 +164,13 @@ img {
 .course__label,
 .course__info {
   font-size: 2rem;
+}
+/*   CONTACT__US*/
+.contact_bg{
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /*madia Query*/
