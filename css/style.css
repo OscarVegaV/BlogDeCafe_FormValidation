@@ -60,9 +60,17 @@ img {
 .text-center{
   text-align: center;
 }
+/*Webp with modernizr*/
+.webp .header{
+background-image: url(../img/banner.webp);
+}
+/* If the browser doesn't support WebP, use JPG as a fallback */
+.no-webp .header{
+  background-image: url(../img/banner.jpg);
+}
 /*header*/
 .header{
-  background-image: url(../img/banner.jpg);
+  /* background-image: url(../img/banner.jpg); */
   height: 60rem;
   background-size: cover;
   background-repeat: no-repeat;
