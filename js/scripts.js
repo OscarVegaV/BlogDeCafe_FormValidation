@@ -35,8 +35,8 @@ newLink.href ='new-link.html';
 newLink.textContent = 'Un Nuevo Enlace';
 
 //adding class
-newLink.classList.add = 'link__navegation';
-//newLink.classList.add('link__navegation'); // Corrected line
+//newLink.classList.add = 'link__navegation';
+newLink.classList.add('link__navegation'); // Corrected line
 
 // adding from Document
 const navegation = document.querySelector('.navegation');
@@ -47,3 +47,32 @@ const navegation = document.querySelector('.navegation');
 navegation.appendChild(newLink);
 
 console.log(newLink);
+
+
+//Events
+
+console.log(1);// Logs '1' in the console immediately when the script loads
+
+// The window waits for the entire page to be fully loaded (including CSS and images)
+window.addEventListener('load', function () {  
+  console.log(2);  // Logs '2' once all resources of the page have been loaded
+});
+
+// The following line of code is equivalent to the above, using the onload method
+window.onload = function () {
+  console.log(3); // Logs '3' when the complete loading of the page is finished
+};
+
+// This event fires when the HTML has been fully loaded,
+// but does not wait for images or CSS to finish loading
+document.addEventListener('DOMContentLoaded', function () {
+  console.log(4); // Logs '4' once the HTML has been loaded and parsed
+})
+
+console.log(5); // Logs '5' immediately, before other events are completed
+
+
+// Function to detect window scroll
+window.onscroll = function () {
+  console.log('scrolling...');  // Logs 'scrolling...' every time the page is scrolled
+};
