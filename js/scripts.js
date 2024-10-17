@@ -73,6 +73,17 @@ console.log(5); // Logs '5' immediately, before other events are completed
 
 
 // Function to detect window scroll
-window.onscroll = function () {
-  console.log('scrolling...');  // Logs 'scrolling...' every time the page is scrolled
+window.onscroll = function (event) {
+  console.log(event);  // Logs the scroll event every time the page is scrolled
 };
+
+
+// Selecting the button element and associating a click event
+const btnSend = document.querySelector('.primary--button');
+//
+btnSend.addEventListener('click', function (event) {
+  console.log(event); // Logs the click event object
+  event.preventDefault();// Stops the default behavior of the event, such as submitting a form before checking validation.
+
+  console.log('enviando formulario');// Custom message to confirm event handling
+});
