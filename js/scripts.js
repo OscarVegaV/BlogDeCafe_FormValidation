@@ -87,3 +87,48 @@ btnSend.addEventListener('click', function (event) {
 
   console.log('enviando formulario');// Custom message to confirm event handling
 });
+
+
+// Events for inputs and textareas
+
+// Object to hold form data
+
+const data = {
+  name: '',
+  email: '',
+  Message: ''
+};
+
+// Selecting input elements using querySelector
+const inputName = document.querySelector('#name'); //Input field for name
+const inputEmail = document.querySelector('#email'); // Input field for email
+const inputMessage = document.querySelector('#message'); //Input field for message
+
+inputName.addEventListener('change', function () {
+  console.log('Typing....'); // Logs 'Typing' when the input value changes
+});
+
+
+
+// 'input' event is better for capturing real-time changes
+inputName.addEventListener('input', function (e) {
+  console.log(e); // Logs 'diferent' when the input value changes
+});
+
+/*// this event es better than change // But if you need more evente is beter use the code down
+inputName.addEventListener('input', function (e) {
+  console.log(e.target.value);  // Logs the value that is being typed in the name field
+});*/
+
+// Using the 'input' event to track changes in all fields
+inputName.addEventListener('input', readText); // Track changes in name field
+inputEmail.addEventListener('input', readText);  // Track changes in email field
+inputMessage.addEventListener('input', readText); // Track changes in message field
+
+
+// Function to read input text and store it in the data object
+function readText(e) {
+  // console.log(e.target.value);
+  data[e.target.id] = e.target.value;// Store the input value in the data object
+  console.log(data);// Log the updated data object
+}
