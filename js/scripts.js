@@ -78,19 +78,35 @@ window.onscroll = function (event) {
 };
 
 
+/*1
 // Selecting the button element and associating a click event
+// *** Important: this is also useful for images or text.
+
 const btnSend = document.querySelector('.primary--button');
-//
+
 btnSend.addEventListener('click', function (event) {
   console.log(event); // Logs the click event object
   event.preventDefault();// Stops the default behavior of the event, such as submitting a form before checking validation.
 
   console.log('enviando formulario');// Custom message to confirm event handling
 });
+*/
+
+// Event type: Submit (useful for forms).
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  //validate the form
+  //console.log('Enviando formulario por submit');
+
+  // sent the form
+
+});
 
 
 // Events for inputs and textareas
-
 // Object to hold form data
 
 const data = {
@@ -131,4 +147,4 @@ function readText(e) {
   // console.log(e.target.value);
   data[e.target.id] = e.target.value;// Store the input value in the data object
   console.log(data);// Log the updated data object
-}
+};
