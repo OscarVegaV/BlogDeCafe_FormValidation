@@ -103,22 +103,27 @@ form.addEventListener('submit', function (event) {
   //destructuring
   const {name, email, message } = data;
 
+  // Clean before messages
+  const existingAlerts = form.querySelectorAll('p.formError, p.formSent');
+  existingAlerts.forEach(alert => alert.remove());
+
     // Validate the form fields
   if (name === '' || email === '' || message === '') {
-    displayError('Todos los Campos Son obligatorios');
+    //displayError('Todos los Campos Son obligatorios');// refacturing code
+    displayAlert('Todos los Campos Son obligatorios', true);
     return; //breackpoit ejecuting of code
   };
 
   //Validate the email
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    displayError('El email no es válido');
+    displayAlert('El email no es válido', true);
     return;
   };
   
 //            **  Successful submission   **
-  displaySuccess('todos los datos se han enviado');
-
+  //displaySuccess('todos los datos se han enviado'); // refacturing code
+  displayAlert('todos los datos se han enviado');
 });
 
 
@@ -165,6 +170,34 @@ function readText(e) {
   console.log(data);// Log the updated data object
 };
 
+
+
+// refacturing code
+function displayAlert(message, error = null) {
+  const alert = document.createElement('P');// make a <P> into Html
+  alert.textContent = message;
+
+  if(error){
+    alert.classList.add('formError');
+  } else{
+    alert.classList.add('formSent');
+  };
+
+  form.appendChild(alert);
+
+  //Removing after 5 seconds
+ setTimeout(() => {
+  alert.remove();
+ }, 5000);
+
+ // Clear the form fields after success
+  inputName.value = '';
+  inputEmail.value = '';
+  inputMessage.value = '';
+ 
+};
+
+/*
 //Display an error in Message
 function displayError(message) {
 
@@ -172,9 +205,9 @@ function displayError(message) {
   if (existingError) return; // Prevent duplicate error messages
 
   //display an error message
-  const error = document.createElement('P');// make a <P> into Html
-  error.textContent = message;// 
-  error.classList.add('formError');// add a class to <P>
+  //const error = document.createElement('P');     // refacturing code
+  //error.textContent = message;// refacturing code
+  //error.classList.add('formError');// refacturing code
 
   form.appendChild(error);
 
@@ -183,21 +216,22 @@ function displayError(message) {
   error.remove();
  }, 5000);
 
-};
+}; 
+*/
 
-// Prevent duplicate error messages
+/*
 function displaySuccess(message) {
 
-  const sentMessage = document.createElement('P');
-  sentMessage.textContent = message;
-  sentMessage.classList.add('formSent');
+  //sentMessage.textContent = message;      // refacturing code
+  //sentMessage.classList.add('formSent');  // refacturing code
 
-  form.appendChild(sentMessage);
+  //form.appendChild(sentMessage); // refacturing code
+  //form.appendChild(alert);  //refacturing code
 
   // Removing after 10 sec
-  setTimeout(() => {
-    sentMessage.remove();
-  }, 10000);
+ // setTimeout(() => {
+  //  sentMessage.remove();
+ // }, 10000);
 
   // Clear the form fields after success
   inputName.value = '';
@@ -205,5 +239,6 @@ function displaySuccess(message) {
   inputMessage.value = '';
   
 };
+*/
 
 
