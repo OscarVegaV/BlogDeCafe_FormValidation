@@ -181,6 +181,21 @@ background-image: url(../img/banner.webp);
   background-repeat: no-repeat;
 }
 
+.formError {
+  background-color: rgb(185, 0, 0);
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
+.formSent{
+  background-color: rgb( 74 185 0 );
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
+
 /* FORM*/
 .form{
   background-color: var(--white);

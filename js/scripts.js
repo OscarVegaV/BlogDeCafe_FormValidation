@@ -98,10 +98,26 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  //validate the form
-  //console.log('Enviando formulario por submit');
+  //            ** validate the form  **
 
-  // sent the form
+  //destructuring
+  const {name, email, message } = data;
+
+    // Validate the form fields
+  if (name === '' || email === '' || message === '') {
+    displayError('Todos los Campos Son obligatorios');
+    return; //breackpoit ejecuting of code
+  };
+
+  //Validate the email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    displayError('El email no es válido');
+    return;
+  };
+  
+//            **  Successful submission   **
+  displaySuccess('todos los datos se han enviado');
 
 });
 
@@ -112,7 +128,7 @@ form.addEventListener('submit', function (event) {
 const data = {
   name: '',
   email: '',
-  Message: ''
+  message: ''
 };
 
 // Selecting input elements using querySelector
@@ -148,3 +164,46 @@ function readText(e) {
   data[e.target.id] = e.target.value;// Store the input value in the data object
   console.log(data);// Log the updated data object
 };
+
+//Display an error in Message
+function displayError(message) {
+
+  const existingError = document.querySelector('.formError');
+  if (existingError) return; // Prevent duplicate error messages
+
+  //display an error message
+  const error = document.createElement('P');// make a <P> into Html
+  error.textContent = message;// 
+  error.classList.add('formError');// add a class to <P>
+
+  form.appendChild(error);
+
+ //Removing after 5 seconds
+ setTimeout(() => {
+  error.remove();
+ }, 5000);
+
+};
+
+// Prevent duplicate error messages
+function displaySuccess(message) {
+
+  const sentMessage = document.createElement('P');
+  sentMessage.textContent = message;
+  sentMessage.classList.add('formSent');
+
+  form.appendChild(sentMessage);
+
+  // Removing after 10 sec
+  setTimeout(() => {
+    sentMessage.remove();
+  }, 10000);
+
+  // Clear the form fields after success
+  inputName.value = '';
+  inputEmail.value = '';
+  inputMessage.value = '';
+  
+};
+
+
